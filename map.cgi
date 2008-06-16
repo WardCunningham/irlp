@@ -17,8 +17,8 @@ Content-type: text/html
 EOF
 
 my ($mylat, $mylon) = (45.47009, -122.74593);
-$mylat = $1 if $ENV{QUERY_STRING} =~ /lat=(-?\d*(\.\d+)?)/;
-$mylon = $1 if $ENV{QUERY_STRING} =~ /lon=(-?\d*(\.\d+)?)/;
+$mylat = $1+0 if $ENV{QUERY_STRING} =~ /lat=(-?\d*(\.\d+)?)/;
+$mylon = $1+0 if $ENV{QUERY_STRING} =~ /lon=(-?\d*(\.\d+)?)/;
 
 my $nodes = "nodes.txt";
 my $url = "http://status.irlp.net/nohtmlstatus.txt";
