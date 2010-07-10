@@ -5,12 +5,11 @@ print "content-type: text/html\n\n";
 
 
 my $nodes = "nodes.txt";
-my $url = "http://status.irlp.net/nohtmlstatus.txt";
 my $detail = "http://status.irlp.net/IRLPnodedetail.php?nodeid";
 my $dx = $1 if $ENV{QUERY_STRING} =~ /(dx)/;
 my $maxweeks = $dx ? 24 : 12;
 if (!-e $nodes or -z $nodes or -M $nodes > (1/24/60)) {
-    open (N, "TMPDIR=/tmp TERM=vt100d lynx -source $url | tee $nodes |") or die($!);
+    open (N, "curl -s 'http://status.irlp.net/nohtmlstatus.txt.zip' | gunzip -c  | tee $nodes |") or die($!);
 } else {
     open (N, $nodes) or die($!);
 }
