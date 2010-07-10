@@ -14,7 +14,7 @@ my $nodes = "nodes.txt";
 my $url = "http://status.irlp.net/nohtmlstatus.txt";
 
 if (!-e $nodes or -z $nodes or -M $nodes > 1) {
-    open (N, "TMPDIR=/tmp TERM=vt100d lynx -source $url | tee $nodes |") or die($!);
+    open (N, "curl -s 'http://status.irlp.net/nohtmlstatus.txt.zip' | gunzip -c  | tee $nodes |") or die($!);
 } else {
     open (N, $nodes) or die($!);
 }
