@@ -45,7 +45,7 @@ while (<N>) {
     my $web = "<a href=$url>o</a>" if $url;
     $freq =~ s/0.0000/000.0000/;
     $freq = "<b>$freq</b>" if $offset != 0;
-    my $item = "$owner&nbsp;$status&nbsp;<a href=http://status.irlp.net/IRLPnodedetail.php?nodeid=$node>$freq</a> <a href=rose.cgi?${map}lat=$lat&lon=$lon>$city $state</a> <font color=gray>($idist)</font> $web <br>";
+    my $item = "$owner&nbsp;$status&nbsp;<a href=http://status.irlp.net/?nodeid=$node>$freq</a> <a href=rose.cgi?${map}lat=$lat&lon=$lon>$city $state</a> <font color=gray>($idist)</font> $web <br>";
     $item =~ s/"/''/g;
     $script .= " point = new GPoint($lon, $lat);\n map.addOverlay(createMarker(point, \"$item\"));\n"
 

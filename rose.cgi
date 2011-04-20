@@ -31,12 +31,12 @@ while (<N>) {
 #    my $stat = 
 #        ($status eq 'DOWN' or $status eq 'OFFLINE') ? "<font color=red>x</font>" :
 #        $status =~ /^9/ ? "<font color=gray>r</font>" :
-#        $status =~ /^\d+/ ? "<a href=http://status.irlp.net/IRLPnodedetail.php?nodeid=$status>n</a>" :
+#        $status =~ /^\d+/ ? "<a href=http://status.irlp.net/?nodeid=$status>n</a>" :
 #        "<font color=gray>-</font>" ;
     $freq =~ s/0.0000/000.0000/;
     $freq = "<b>$freq</b>" if $offset != 0;
     my $item = <<;
-        <a href=http://status.irlp.net/IRLPnodedetail.php?nodeid=$node>$freq</a> 
+        <a href=http://status.irlp.net/?nodeid=$node>$freq</a>
         <a href=rose.cgi?${map}lat=$lat&lon=$lon>$city $state</a>
         <font color=gray>($idist)</font> $web <br>
 

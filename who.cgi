@@ -20,7 +20,7 @@ while (<S>) {
         $call = "<a href=$url>$call</a>" if $url;
         $names{$node} = << ;
         <tr>
-        <td><a href=http://status.irlp.net/IRLPnodedetail.php?nodeid=$node>$node</a></td>
+        <td><a href=http://status.irlp.net/?nodeid=$node>$node</a></td>
         <td>$call</td>
         <td><a href=http://qrz.com/callsign/$owner>$owner</a></td>
         <td><a href=http://c2.com/~ward/irlp/rose.cgi?lat=$lat&lon=$lon>$city</a> $state $country</td>

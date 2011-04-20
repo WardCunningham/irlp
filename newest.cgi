@@ -5,7 +5,7 @@ print "content-type: text/html\n\n";
 
 
 my $nodes = "nodes.txt";
-my $detail = "http://status.irlp.net/IRLPnodedetail.php?nodeid";
+my $detail = "http://status.irlp.net/?nodeid";
 my $dx = $1 if $ENV{QUERY_STRING} =~ /(dx)/;
 my $maxweeks = $dx ? 24 : 12;
 if (!-e $nodes or -z $nodes or -M $nodes > (1/24/60)) {
